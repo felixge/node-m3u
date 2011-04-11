@@ -31,9 +31,24 @@ A node.js module for creating m3u / m3u8 files. Supported dialects are [m3u][],
 
     console.log(writer.toString());
 
+    // Http Live Streaming M3U
+    var writer = require('m3u').httpLiveStreamingWriter();
+    writer.comment('I am a comment');
+    writer.info('10', 'Artist - Title');
+    writer.info('42'); // duration only, no title
+    writer.uri('foo.mp3');
+    writer.uri('bar.mp3', 23); // include a duration
+
+    console.log(writer.toString());
+
+
 ## Todo
 
 * npm package
 * Implement http live streaming writer
 * Use writeable stream interface for writers
 * Implement a reader (I probably won't do this, but I will accept patches)
+
+## License
+
+node-m3u is licensed under the MIT license.
