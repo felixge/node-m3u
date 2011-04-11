@@ -1,0 +1,7 @@
+#EXTM3U
+#I am a comment
+#EXTINF:10,Artist - Title
+#EXTINF:42,
+foo.mp3
+#EXTINF:23,
+bar.mp3
