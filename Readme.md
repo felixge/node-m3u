@@ -20,6 +20,7 @@ A node.js module for creating m3u files. Supported dialects are [m3u][],
     writer.uri('foo.mp3');
 
     // Extended M3U
+    var writer = require('m3u').extendedWriter();
     writer.comment('I am a comment');
     writer.info('10', 'Artist - Title');
     writer.info('42'); // duration only, no title
