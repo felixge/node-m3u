@@ -94,9 +94,7 @@ well as additional capabilities defined by Apple:
 
 ## Todo
 
-Things I'm working on:
-
-* npm package
+I don't have plans for more features at this point, except bug fixes.
 
 ## Contributing
 
