@@ -1,6 +1,6 @@
 # node-m3u
 
-A node.js module for creating m3u files. Supported dialects are [m3u][],
+A node.js module for creating m3u / m3u8 files. Supported dialects are [m3u][],
 [extended m3u][] and [http live streaming m3u][].
 
 [m3u]: http://en.wikipedia.org/wiki/M3U
