@@ -13,41 +13,94 @@ A node.js module for creating m3u / m3u8 files. Supported dialects are [m3u][],
 
 ## Usage
 
-    // Basic M3U
+Plain M3U:
+
     var writer = require('m3u').writer();
+
+    // A comment.
     writer.comment('I am a comment');
+
+    // An empty line.
     writer.write(); // blank line
+
+    // A playlist item, usually a path or url.
     writer.uri('foo.mp3');
 
     console.log(writer.toString());
 
-    // Extended M3U
+Extended M3U:
+
     var writer = require('m3u').extendedWriter();
+
     writer.comment('I am a comment');
-    writer.info('10', 'Artist - Title');
-    writer.info('42'); // duration only, no title
-    writer.uri('foo.mp3');
-    writer.uri('bar.mp3', 23); // include a duration
+
+    // Adds a playlist item preceeded by an optional EXTINF tag for the duration.
+    // and title of the item.
+    writer.uri('bar.mp3');
+    writer.uri('bar.mp3', 23);
+    writer.uri('bar.mp3', 23, 'Artist - Title');
 
     console.log(writer.toString());
 
-    // Http Live Streaming M3U
+Http Live Streaming:
+
     var writer = require('m3u').httpLiveStreamingWriter();
-    writer.comment('I am a comment');
-    writer.info('10', 'Artist - Title');
-    writer.info('42'); // duration only, no title
-    writer.uri('foo.mp3');
-    writer.uri('bar.mp3', 23); // include a duration
+
+    // EXT-X-TARGETDURATION: Maximum media file duration.
+    writer.targetDuration(10);
+
+    // EXT-X-MEDIA-SEQUENCE: Sequence number of first file (optional).
+    // (optional)
+    writer.mediaSequence(0)
+
+    // EXT-X-PROGRAM-DATE-TIME: The date of the program's origin, optional.
+    // (optional)
+    writer.programDateTime('2011-04-11T21:24:06Z');
+
+    // EXT-X-ALLOW-CACHE: Set if the client is allowed to cache this m3u file.
+    // (optional)
+    writer.allowCache(true);
+    writer.allowCache(false);
+
+    // EXT-X-PLAYLIST-TYPE: Provides mutability information about the m3u file.
+    // (optional)
+    writer.playlistType('EVENT');
+    writer.playlistType('VOD');
+
+    // EXT-X-ENDLIST: Indicates that no more media files will be added to the m3u file.
+    // (optional)
+    writer.endlist();
+
+    // EXT-X-VERSION: Indicates the compatibility version of the Playlist file.
+    // (optional)
+    writer.version(3);
+
+    // Adds a playlist as the next item preceeded by an EXT-X-STREAM-INF tag.
+    writer.playlist('another.m3u', {
+      bandwidth: 512000, // required
+      programId: '1',
+      codecs: 'avc1.42001e,mp4a.40.34',
+      resolution: '640x480',
+    });
 
     console.log(writer.toString());
 
 
 ## Todo
 
+Things I will work on in the future:
+
 * npm package
+* Remove info() function
+* Rename uri to item
 * Implement http live streaming writer
-* Use writeable stream interface for writers (I don't need this, but I will accept patches)
-* Implement a reader (I don't need this, but I will accept patches)
+
+Stuff I would love to get patches for:
+
+* `HttpLiveStreamingWriter#key()` (EXT-X-KEY)
+* `HttpLiveStreamingWriter#discontinuity()` (EXT-X-DISCONTINUITY)
+* Use writeable stream interface for writers
+* Implement a reader
 
 ## License
 
