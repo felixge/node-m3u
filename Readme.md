@@ -85,7 +85,6 @@ well as additional capabilities defined by Apple:
 
     console.log(writer.toString());
 
-
 ## Todo
 
 Things I'm working on:
