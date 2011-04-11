@@ -88,19 +88,21 @@ well as additional capabilities defined by Apple:
 
 ## Todo
 
-Things I will work on in the future:
+Things I'm working on:
 
 * npm package
 * Remove info() function
 * Rename uri to item
 * Implement http live streaming writer
 
-Stuff I would love to get patches for:
+## Contributing
 
+Stuff I probably won't have time to do myself, and would love to get patches for:
+
+* Implement the ability to read m3u files
+* Support node.js's writeable stream interface for the writers
 * `HttpLiveStreamingWriter#key()` (EXT-X-KEY)
 * `HttpLiveStreamingWriter#discontinuity()` (EXT-X-DISCONTINUITY)
-* Use writeable stream interface for writers
-* Implement a reader
 
 ## License
 
