@@ -46,8 +46,8 @@ A node.js module for creating m3u / m3u8 files. Supported dialects are [m3u][],
 
 * npm package
 * Implement http live streaming writer
-* Use writeable stream interface for writers
-* Implement a reader (I probably won't do this, but I will accept patches)
+* Use writeable stream interface for writers (I don't need this, but I will accept patches)
+* Implement a reader (I don't need this, but I will accept patches)
 
 ## License
 
