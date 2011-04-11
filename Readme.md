@@ -9,7 +9,7 @@ A node.js module for creating m3u files. Supported dialects are [m3u][],
 
 ## Installation
 
-  npm install m3u
+    npm install m3u
 
 ## Usage
 
