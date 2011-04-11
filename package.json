@@ -1,0 +1,18 @@
+{
+  "name": "m3u",
+  "description": "A node.js module for creating m3u / m3u8 files.",
+  "version": "0.0.1",
+  "homepage": "https://github.com/felixge/node-m3u",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:felixge/node-m3u.git"
+  },
+  "author": "Felix Geisendörfer <felix@debuggable.com> (http://debuggable.com/)",
+  "main": "./lib/m3u.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "engines": {
+    "node": "*"
+  }
+}
