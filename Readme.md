@@ -90,7 +90,6 @@ well as additional capabilities defined by Apple:
 Things I'm working on:
 
 * npm package
-* Remove info() function
 
 ## Contributing
 
