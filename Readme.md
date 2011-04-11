@@ -102,6 +102,7 @@ Stuff I probably won't have time to do myself, and would love to get patches for
 * Support node.js's writeable stream interface for the writers
 * `HttpLiveStreamingWriter#key()` (EXT-X-KEY)
 * `HttpLiveStreamingWriter#discontinuity()` (EXT-X-DISCONTINUITY)
+* Support JS date objects for `HttpLiveStreamingWriter#programDateTime()`
 
 ## License
 
