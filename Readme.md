@@ -24,7 +24,7 @@ Plain M3U:
     writer.write(); // blank line
 
     // A playlist item, usually a path or url.
-    writer.uri('foo.mp3');
+    writer.file('foo.mp3');
 
     console.log(writer.toString());
 
@@ -36,9 +36,9 @@ Extended M3U:
 
     // Adds a playlist item preceeded by an optional EXTINF tag for the duration.
     // and title of the item.
-    writer.uri('bar.mp3');
-    writer.uri('bar.mp3', 23);
-    writer.uri('bar.mp3', 23, 'Artist - Title');
+    writer.file('bar.mp3');
+    writer.file('bar.mp3', 23);
+    writer.file('bar.mp3', 23, 'Artist - Title');
 
     console.log(writer.toString());
 
