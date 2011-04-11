@@ -12,6 +12,8 @@ A node.js module for creating m3u / m3u8 files. Supported dialects are [m3u][],
 This module is still new, but I'm going to use it in production over at
 [transloadit.com][] next.
 
+[transloadit.com]: http://transloadit.com/
+
 ## Installation
 
     npm install m3u
