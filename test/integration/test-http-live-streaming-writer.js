@@ -24,6 +24,19 @@ writer.allowCache(false);
 writer.playlistType('EVENT');
 writer.playlistType('VOD');
 
+// Adds a playlist as the next item preceeded by an EXT-X-STREAM-INF tag.
+writer.playlist('simple.m3u', {
+  bandwidth: 3000000,
+  programId: 1,
+});
+
+writer.playlist('another.m3u', {
+  bandwidth: 3000000, // required
+  programId: 1,
+  codecs: ['avc1.4d001e', 'mp4a.40.5'],
+  resolution: '640x480',
+});
+
 // EXT-X-ENDLIST: Indicates that no more media files will be added to the m3u file.
 // (optional)
 writer.endlist();
@@ -31,13 +44,5 @@ writer.endlist();
 // EXT-X-VERSION: Indicates the compatibility version of the Playlist file.
 // (optional)
 writer.version(3);
-
-// Adds a playlist as the next item preceeded by an EXT-X-STREAM-INF tag.
-writer.playlist('another.m3u', {
-  bandwidth: 512000, // required
-  programId: '1',
-  codecs: 'avc1.42001e,mp4a.40.34',
-  resolution: '640x480',
-});
 
 fixture.compare(writer, 'http_live_streaming_writer.m3u8');

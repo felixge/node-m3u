@@ -77,9 +77,9 @@ well as additional capabilities defined by Apple:
 
     // Adds a playlist as the next item preceeded by an EXT-X-STREAM-INF tag.
     writer.playlist('another.m3u', {
-      bandwidth: 512000, // required
-      programId: '1',
-      codecs: 'avc1.42001e,mp4a.40.34',
+      bandwidth: 3000000, // required
+      programId: 1,
+      codecs: ['avc1.42001e', 'mp4a.40.34'],
       resolution: '640x480',
     });
 
@@ -91,8 +91,6 @@ Things I'm working on:
 
 * npm package
 * Remove info() function
-* Rename uri to item
-* Implement http live streaming writer
 
 ## Contributing
 
