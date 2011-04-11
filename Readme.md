@@ -19,6 +19,8 @@ A node.js module for creating m3u / m3u8 files. Supported dialects are [m3u][],
     writer.write(); // blank line
     writer.uri('foo.mp3');
 
+    console.log(writer.toString());
+
     // Extended M3U
     var writer = require('m3u').extendedWriter();
     writer.comment('I am a comment');
@@ -26,6 +28,8 @@ A node.js module for creating m3u / m3u8 files. Supported dialects are [m3u][],
     writer.info('42'); // duration only, no title
     writer.uri('foo.mp3');
     writer.uri('bar.mp3', 23); // include a duration
+
+    console.log(writer.toString());
 
 ## Todo
 
