@@ -13,7 +13,7 @@ A node.js module for creating m3u / m3u8 files. Supported dialects are [m3u][],
 
 ## Usage
 
-Plain M3U:
+The default `Writer` class can be used to create basic m3u files:
 
     var writer = require('m3u').writer();
 
@@ -28,11 +28,10 @@ Plain M3U:
 
     console.log(writer.toString());
 
-Extended M3U:
+The `ExtendedWriter` supports all methods of the normal `Writer`, as well as
+additional capabilities defined by the extended m3u format.
 
     var writer = require('m3u').extendedWriter();
-
-    writer.comment('I am a comment');
 
     // Adds a playlist item preceeded by an optional EXTINF tag for the duration.
     // and title of the item.
@@ -42,7 +41,8 @@ Extended M3U:
 
     console.log(writer.toString());
 
-Http Live Streaming:
+The `HttpLiveStreamingWriter` supports all methods of the `ExtendedWriter`, as
+well as additional capabilities defined by Apple:
 
     var writer = require('m3u').httpLiveStreamingWriter();
 
