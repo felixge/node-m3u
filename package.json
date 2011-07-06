@@ -9,6 +9,9 @@
   },
   "author": "Felix Geisendörfer <felix@debuggable.com> (http://debuggable.com/)",
   "main": "./lib/m3u.js",
+  "dependencies": {
+    "oop": "0.0.3"
+  },
   "directories": {
     "lib": "lib"
   },
