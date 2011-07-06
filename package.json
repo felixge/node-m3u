@@ -1,7 +1,7 @@
 {
   "name": "m3u",
   "description": "A node.js module for creating m3u / m3u8 files.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/felixge/node-m3u",
   "repository": {
     "type": "git",
@@ -17,5 +17,6 @@
   },
   "engines": {
     "node": "*"
-  }
+  },
+  "devDependencies": {}
 }
