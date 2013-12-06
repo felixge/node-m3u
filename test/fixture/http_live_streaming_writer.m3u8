@@ -12,3 +12,4 @@ simple.m3u
 another.m3u
 #EXT-X-ENDLIST
 #EXT-X-VERSION:3
+#EXT-X-DISCONTINUITY
