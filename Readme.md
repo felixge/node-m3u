@@ -90,6 +90,9 @@ well as additional capabilities defined by Apple:
       resolution: '640x480',
     });
 
+    // EXT-X-DISCONTINUITY: Indicates that the player should expect the next video segment to be a different resolution or have a different audio profile than the last.
+    writer.discontinuity();
+
     console.log(writer.toString());
 
 ## Todo
@@ -103,7 +106,6 @@ Stuff I probably won't have time to do myself, and would love to get patches for
 * Implement the ability to read m3u files
 * Support node.js's writeable stream interface for the writers
 * `HttpLiveStreamingWriter#key()` (EXT-X-KEY)
-* `HttpLiveStreamingWriter#discontinuity()` (EXT-X-DISCONTINUITY)
 * Support JS date objects for `HttpLiveStreamingWriter#programDateTime()`
 
 ## License

@@ -45,4 +45,8 @@ writer.endlist();
 // (optional)
 writer.version(3);
 
+// EXT-X-DISCONTINUITY: Indicates there is a change coming. 
+// (optional)
+writer.discontinuity();
+
 fixture.compare(writer, 'http_live_streaming_writer.m3u8');
